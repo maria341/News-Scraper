@@ -8,7 +8,7 @@ var app = express();
 
 module.exports = function(app) {
     app.get("/scrape", function(req, res) {
-        axios.get("https://www.foxnews.com/local/").then(function(response) {
+        axios.get("https://www.startribune.com/local/").then(function(response) {
             var $ = cheerio.load(response.data);
 
             $("div.tease-container-right").each(function(i, element) {
