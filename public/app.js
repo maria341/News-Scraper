@@ -27,7 +27,7 @@ $("body").on("click", "#make-comment", function() {
 
         $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
 
-        $("notes").append("<button data-id='" + data._id + "' + id='save-comment'>Save Note</button>");
+        $("#notes").append("<button data-id='" + data._id + "' + id='save-comment'>Save Note</button>");
 
         if(data.note) {
             $("#bodyinput").val(data.note.body);

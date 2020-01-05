@@ -8,14 +8,14 @@ var app = express();
 
 module.exports = function(app) {
     app.get("/scrape", function(req, res) {
-        axios.get("http://www.fox.com/local/").then(function(response) {
+        axios.get("https://news.ycombinator.com/").then(function(response) {
             var $ = cheerio.load(response.data);
 
             $("div.tease-container-right").each(function(i, element) {
                 var result = {};
 
                 result.title = $(this).find("a.tease-headline").text().trim();
-                result.link = $(this).find("a.tese-headline").attr("href");
+                result.link = $(this).find("a.tease-headline").attr("href");
                 result.summary = $(this).find("div.tease-summary").text().trim();
                 result.image = $(this).find("a.tease-headline").find("div.tease-photo-img").find("img").attr("src");
             
