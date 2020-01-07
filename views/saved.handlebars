@@ -1,18 +1,14 @@
 <div>
-  <h4>Saved Articles</h4>
-
+ 
   {{#if articles}}
   {{#each articles}}
 
-  <div class="card mb-4">
+  <div class="card mb-5">
     <div class="card-header text-center text-black bg-warning">
       <h5>{{this.title}}</h5>
     </div>
     <div class="card-body">
       <div class="row">
-        <div class="col-3 card-img mt-1" alt="Card image">
-          <img src="{{this.image}}">
-        </div>
         <div class="col-8">
           <h6>Article Summary:</h6>
           <p>{{this.summary}}</p>
@@ -20,13 +16,13 @@
       </div>
       <div class="row mt-1">
         <div class="col-3">
-          <h6 class="pt-3 pl-2">Current Comments:</h6>
+          <h6 class="pt-3 pl-2">Comments Here:</h6>
         </div>
         <div class="col-6">
           {{#if articles.note}} {{#each articles.note}}
           <p>{{body}}</p>
           {{/each}} {{else}}
-          <p class="mt-3">No comments have been made yet. Feel free to leave one.</p>
+          <p class="mt-3">Feel free to leave comments.</p>
           {{/if}}
         </div>
       </div>
@@ -35,9 +31,6 @@
         <a href="{{this.link}}" type="button" class="btn btn-success ml-3 mr-4" target="_blank">Read Article</a>
         <button type="button" class="btn btn-success mr-4" id="unsave-article" data-id="{{this._id}}">Remove from Saved
           Articles</button>
-        <button type="button" class="btn btn-success ml-4" id="delete-article" data-id="{{this._id}}">Delete
-          Article</button>
-
         <button type="button" class="btn btn-success ml-4" id="make-comment" data-id="{{this._id}}">Comment</button>
 
       </div>

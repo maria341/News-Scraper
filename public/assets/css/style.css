@@ -2,7 +2,7 @@
     padding-top: 100px !important;
     color: whitesmoke;
   }
-  
+
   h1, h3 {
     text-shadow: 3px 2px yellow !important;
   }
@@ -13,6 +13,10 @@
   
   h3 {
     font-size: 35px !important;
+  }
+
+  .card-body {
+    border: solid 1px black;
   }
   
   #wrapper {
